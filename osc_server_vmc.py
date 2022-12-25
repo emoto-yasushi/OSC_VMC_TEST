@@ -18,7 +18,7 @@ if __name__ == "__main__":
 	vmc_dispatcher.map("/VMC/Ext/Blend/Val", receive_VMC_OSC_BlendShape)
 	vmc_dispatcher.map("/VMC/Ext/Bone/Pos", receive_VMC_OSC_Pos)
 
-	vmc_recieve_server = osc_server.ThreadingOSCUDPServer(("192.168.128.164", 39540), vmc_dispatcher)
+	vmc_recieve_server = osc_server.ThreadingOSCUDPServer(("", 39540), vmc_dispatcher)
 
 	vmc_recieve_thread = threading.Thread(target=vmc_recieve_server.serve_forever)
 	vmc_recieve_thread.start()
